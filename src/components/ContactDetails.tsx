@@ -230,7 +230,7 @@ const ContactDetails = () => {
         <p
           className={` ${gilroyMedium.className} text-[14px] text-center text-grey opacity-90`}
         >
-          &copy; AutoHelp USA, all rights reserved 2025
+          &copy; ChangeHub-Solutions, all rights reserved 2025
         </p>
       </div>
     </div>
