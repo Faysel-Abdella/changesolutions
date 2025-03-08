@@ -64,6 +64,7 @@ export default function ContactForm() {
 
   return (
     <motion.div
+      id="contact-form"
       className="relative w-full md:w-1/2 text-gray-text border-[1px] backdrop-blur-[50px] p-10 custom-contact-us-bg border-white-border rounded-[40px]"
       initial={{ x: 100, opacity: 0 }}
       whileInView={{ opacity: 1, x: 0 }}

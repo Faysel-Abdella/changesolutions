@@ -85,8 +85,9 @@ const Service: React.FC<ServicesProps> = ({
       </div>
 
       <div className="lg:hidden mt-4">
-        <button className="bg-primary font-semibold text-white py-[10px] px-[24px] rounded-full flex items-center gap-2 cursor-pointer">
-          Contact Us
+        <button className="bg-primary font-semibold text-white py-[10px] px-[24px] rounded-full flex items-center gap-2 justify-start cursor-pointer">
+          <Link href="#contact-form">{details.title}</Link>
+          <ArrowIcon />
         </button>
       </div>
     </div>
