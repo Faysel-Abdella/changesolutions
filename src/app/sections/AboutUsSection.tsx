@@ -6,6 +6,7 @@ import { ArrowIcon } from "@/components/Icons";
 import RotatingSpinner from "@/components/RotatingSpinner";
 import { motion } from "framer-motion";
 import ValuesAndPrinciples from "@/components/ValuesAndPrinciplesSection";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -101,7 +102,7 @@ const AboutUs = () => {
             <button
               className={`font-semibold bg-primary gap-2 text-white py-[10px] px-6 rounded-full flex items-center justify-start cursor-pointer `}
             >
-              Contact Us
+              <Link href="#contact-us">Contact Us</Link>
               <ArrowIcon />
             </button>
           </div>
