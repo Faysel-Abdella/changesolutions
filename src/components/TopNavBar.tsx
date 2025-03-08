@@ -103,12 +103,10 @@ const TopNavBar = () => {
       </div>
 
       <div className={`${manrope.className} text-[14px] hidden md:block`}>
-        <Button
-          endContent={<ArrowIcon />}
-          className="bg-primary font-semibold text-white py-[10px] px-6 rounded-full flex cursor-pointer"
-        >
+        <button className="bg-primary font-semibold text-white py-[10px] px-6 rounded-full flex items-center gap-2 cursor-pointer">
           <Link href="#contact-us">Contact Us</Link>
-        </Button>
+          <ArrowIcon />
+        </button>
       </div>
 
       {/* Mobile Menu Toggle */}

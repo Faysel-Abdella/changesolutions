@@ -54,7 +54,7 @@ const OurServices = () => {
     >
       <div className="flex flex-col items-center justify-center px-4">
         <p
-          className={` ${clashMedium.className} font-medium text-[52px] md:text-[96px] lg:text-[138px] bg-gradient-to-b from-[#2222221a] to-[#2222220] bg-clip-text text-transparent`}
+          className={` ${clashMedium.className} main-title font-medium text-[52px] md:text-[96px] lg:text-[138px] `}
         >
           Our Services
         </p>
@@ -94,7 +94,7 @@ const OurServices = () => {
         {/* Sliding Services Container */}
         <div className="overflow-hidden min-w-[350px] w-full max-w-[1005px]">
           <motion.div
-            className="flex transition-transform duration-100 ease-in-out"
+            className="flex transition-transform duration-75 ease-in-out"
             drag="x"
             dragConstraints={{
               left: 0,
@@ -103,7 +103,12 @@ const OurServices = () => {
             style={{
               x: dragX,
             }}
-            transition={{ duration: 0.1, ease: "easeOut" }}
+            transition={
+              {
+                // duration: 0.2,
+                // ease: "easeInOut"
+              }
+            }
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             animate={{
@@ -116,12 +121,13 @@ const OurServices = () => {
                 className="w-full flex-shrink-0 cursor-grab "
                 animate={
                   {
-                    // scale: currentIndex === index ? 0.95 : 0.9,
+                    // scale: currentIndex === index ? 0.95 : 0.8,
                   }
                 }
                 transition={{
-                  duration: 0.1,
-                  ease: "easeOut",
+                  duration: 0.2,
+                  // ease: "easeInOut",
+                  // type: "tween",
                 }}
               >
                 <Service {...service} />
@@ -142,12 +148,12 @@ const OurServices = () => {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex items-center justify-center gap-[6px] mb-4 ">
+      <div className="flex items-center cursor-pointer justify-center gap-[6px] mb-4 ">
         {serviceList.map((_, index) => (
           <span
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-[7px] h-[7px] rounded-full ${
+            className={`w-[7px] h-[7px] rounded-full cursor-pointer ${
               index === currentIndex
                 ? "bg-sky-blue w-[21px] h-[7px]"
                 : "bg-dots"

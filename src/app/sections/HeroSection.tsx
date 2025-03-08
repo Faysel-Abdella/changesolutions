@@ -4,7 +4,6 @@ import { TwistedArrowIcon } from "@/components/Icons";
 import React from "react";
 import { gilroyMedium, gilroyRegular } from "@/app/fonts";
 import { manrope, baskervville } from "@/app/fonts";
-import { Button } from "@heroui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -51,7 +50,7 @@ const HeroSection = () => {
                       key={index}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 2.2 + index * 0.2 }}
+                      transition={{ duration: 0.3, delay: 0.5 + index * 0.2 }}
                     >
                       {letter}
                     </motion.span>
@@ -89,12 +88,12 @@ const HeroSection = () => {
                 <TwistedArrowIcon />
               </div>
 
-              <Button
-                endContent={<ArrowIcon />}
+              <button
                 className={`${manrope.className} bg-sky-blue rounded-full flex gap-1 items-center justify-center text-white text-[12px] md:text-[14px] py-[10px] md:py-[16px] px-[20px] cursor-pointer`}
               >
                 <Link href="#contact-us">Start Your Transformation</Link>
-              </Button>
+                <ArrowIcon />
+              </button>
             </motion.div>
           </div>
 

@@ -2,7 +2,6 @@
 import React from "react";
 import { clashMedium, gilroyBold, gilroyMedium, manrope } from "../fonts";
 import Image from "next/image";
-import { Button } from "@heroui/button";
 import { ArrowIcon } from "@/components/Icons";
 import RotatingSpinner from "@/components/RotatingSpinner";
 import { motion } from "framer-motion";
@@ -33,7 +32,7 @@ const AboutUs = () => {
         transition={{ duration: 0.8, ease: "easeOut" }} // Smooth timing
       >
         <p
-          className={` ${clashMedium.className} font-medium z-40 text-[52px] md:text-[96px] lg:text-[138px] bg-gradient-to-b from-[#2222221a] to-[#2222220] bg-clip-text text-transparent`}
+          className={` ${clashMedium.className} main-title font-medium z-40 text-[52px] md:text-[96px] lg:text-[138px] `}
         >
           About Us
         </p>
@@ -99,12 +98,12 @@ const AboutUs = () => {
             approach to your challenges.
           </h2>
           <div className="flex mt-auto md:self-start self-center">
-            <Button
-              endContent={<ArrowIcon />}
-              className={`font-semibold bg-primary text-white py-[10px] px-6 rounded-full flex justify-start cursor-pointer `}
+            <button
+              className={`font-semibold bg-primary gap-2 text-white py-[10px] px-6 rounded-full flex items-center justify-start cursor-pointer `}
             >
               Contact Us
-            </Button>
+              <ArrowIcon />
+            </button>
           </div>
         </motion.div>
       </div>

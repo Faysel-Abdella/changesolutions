@@ -65,7 +65,7 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      className="relative w-full md:w-1/2 text-gray-text border-[1px] backdrop-blur-[50px] p-10 bg-gradient-to-b from-[#322D5A] to-[#322D5ABF] bg-clip-text border-white-border rounded-[40px]"
+      className="relative w-full md:w-1/2 text-gray-text border-[1px] backdrop-blur-[50px] p-10 custom-contact-us-bg border-white-border rounded-[40px]"
       initial={{ x: 100, opacity: 0 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -85,7 +85,7 @@ export default function ContactForm() {
               placeholder="Name*"
               value={formData.name}
               onChange={handleChange}
-              className="border-[1px] border-[#FFFFFF40] py-4 px-5 rounded-2xl placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative"
+              className="border-[1px] text-white border-[#FFFFFF40] py-4 px-5 rounded-2xl placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative"
               required
             />
 
@@ -95,7 +95,7 @@ export default function ContactForm() {
               placeholder="Phone number*"
               value={formData.phone}
               onChange={handleChange}
-              className="border-[1px] border-[#FFFFFF40] py-4 px-5 rounded-2xl placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative"
+              className="border-[1px] text-white border-[#FFFFFF40] py-4 px-5 rounded-2xl placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative"
               required
             />
 
@@ -105,7 +105,7 @@ export default function ContactForm() {
               placeholder="Email*"
               value={formData.email}
               onChange={handleChange}
-              className="border-[1px] border-[#FFFFFF40] py-4 px-5 rounded-2xl placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative"
+              className="border-[1px] text-white border-[#FFFFFF40] py-4 px-5 rounded-2xl placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative"
               required
             />
 
@@ -115,7 +115,7 @@ export default function ContactForm() {
               rows={4}
               value={formData.message}
               onChange={handleChange}
-              className="border-[1px] border-[#FFFFFF40] py-4 px-5 rounded-[20px] placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative resize-none"
+              className="border-[1px] text-white border-[#FFFFFF40] py-4 px-5 rounded-[20px] placeholder:text-[#B7BEC7] bg-light-blue-black w-full focus:outline-none focus:ring-2 focus:ring-sky-blue cursor-text relative resize-none"
               required
             />
           </div>
@@ -123,13 +123,13 @@ export default function ContactForm() {
 
         {/* Submit Button */}
         <div className="flex items-center justify-center w-full">
-          <Button
+          <button
             type="submit"
             className="text-white bg-sky-blue py-3 px-6 w-7/8 rounded-2xl flex justify-center cursor-pointer hover:bg-opacity-90 transition disabled:opacity-70"
             disabled={loading}
           >
             {loading ? "Submitting..." : "Submit"}
-          </Button>
+          </button>
         </div>
 
         {/* Response Message */}

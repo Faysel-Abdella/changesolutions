@@ -119,11 +119,40 @@
     rgba(255, 255, 255, 0.15) 50%,
     rgba(255, 255, 255, 0.0375) 100%
   );
+  
+}
+.custom-text {
+  background: linear-gradient(93.02deg, #EAEAEA 35.9%, #EBEBEB 35.9%, #B5B9BE 57.14%, #727A84 78.23%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+.custom-title {
+  background: linear-gradient(93.02deg, #EAEAEA 35.9%, #EBEBEB 35.9%, #B5B9BE 57.14%, #727A84 78.23%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.custom-blue {
+  background: linear-gradient(93.02deg, #708DFF 35.9%, #5B76E2 35.9%, #396499 57.14%, #09376C 78.23%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.custom-contact-us-bg {
+  background: linear-gradient(309.38deg, rgba(50, 45, 90, 0.5) 2.92%, rgba(50, 45, 90, 0.375) 96.52%);
+ 
+}
+
+.main-title {
+  background: linear-gradient(180deg, rgba(34, 34, 34, 0.1) 0%, rgba(34, 34, 34, 0) 85.74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 @media (max-width: 768px) {
   .image-bg {
     background-size: 100% 60% !important; /* 60% of height for smaller screens */
     background-position: bottom center !important;
   }
 }
+
