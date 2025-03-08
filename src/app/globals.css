@@ -138,6 +138,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.custom-contact-us-bg {
+  background: linear-gradient(309.38deg, rgba(50, 45, 90, 0.5) 2.92%, rgba(50, 45, 90, 0.375) 96.52%);
+ 
+}
+
+.main-title {
+  background: linear-gradient(180deg, rgba(34, 34, 34, 0.1) 0%, rgba(34, 34, 34, 0) 85.74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 @media (max-width: 768px) {
   .image-bg {
     background-size: 100% 60% !important; /* 60% of height for smaller screens */

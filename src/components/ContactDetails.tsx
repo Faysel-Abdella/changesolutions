@@ -208,7 +208,7 @@ const ContactDetails = () => {
         </motion.div>
       </motion.div>
 
-      <div className="max-w-[500px] py-10">
+      {/* <div className="max-w-[500px] py-10">
         <ul
           className={` ${gilroyRegular.className} text-[16px] flex flex-wrap justify-center sm:justify-between items-center gap-x-8 gap-y-4`}
         >
@@ -223,7 +223,7 @@ const ContactDetails = () => {
           </li>
           <li className="block sm:hidden text-center w-full">Instagram</li>
         </ul>
-      </div>
+      </div> */}
 
       <div className="w-full px-6 py-5">
         <div className="h-[1px] bg-custom-gradient mb-6"></div>

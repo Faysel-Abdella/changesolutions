@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm";
 
 const SendEmail = () => {
   return (
-    <div className="w-full flex z-50 gap-10 md:flex-row flex-col max-w-[1109px] items-center justify-between bg-dark-blue px-4 py-6 sm:p-8 md:p-16">
+    <div className="w-full flex z-50 gap-10 md:flex-row flex-col max-w-[1109px] items-center justify-between px-4 py-6 sm:p-8 md:p-16">
       {/* Left section (Contact Us) */}
       <motion.div
         className="flex flex-col items-center w-full md:w-1/2 gap-10 justify-center md:justify-start"

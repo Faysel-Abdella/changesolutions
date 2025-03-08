@@ -7,12 +7,12 @@ const ContactUs = () => {
   return (
     <div
       id="contact-us"
-      className="flex flex-col items-center bg-dark-blue relative overflow-x-hidden w-full"
+      className="flex flex-col items-center relative overflow-x-hidden bg-dark-blue w-full"
     >
       <div className="absolute right-0  opacity-3 mix-blend-exclusion w-full h-full ">
         <Image
           loading="eager"
-          src="/images/liquid-bg-unscreen.gif"
+          src="/images/liquid-bg.gif"
           alt="bg"
           fill
           unoptimized

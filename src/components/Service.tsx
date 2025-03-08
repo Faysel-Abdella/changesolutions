@@ -4,6 +4,7 @@ import { TitleDescription } from "./type";
 import { gilroyMedium, gilroySemiBold } from "@/app/fonts";
 import { Button } from "@heroui/button";
 import { ArrowIcon } from "./Icons";
+import Link from "next/link";
 
 interface ServicesProps {
   title: string;
@@ -39,12 +40,10 @@ const Service: React.FC<ServicesProps> = ({
           </p>
         </div>
         <div className="hidden lg:flex mt-auto self-start">
-          <Button
-            endContent={<ArrowIcon />}
-            className="bg-primary font-semibold text-white py-[10px] px-[24px] rounded-full flex justify-start cursor-pointer"
-          >
-            {details.title}
-          </Button>
+          <button className="bg-primary font-semibold text-white py-[10px] px-[24px] rounded-full flex items-center gap-2 justify-start cursor-pointer">
+            <Link href="#contact-us">{details.title}</Link>
+            <ArrowIcon />
+          </button>
         </div>
       </div>
       <div className="flex md:flex-row flex-col gap-3 items-center justify-center md:justify-between">
@@ -96,12 +95,9 @@ const Service: React.FC<ServicesProps> = ({
       </div>
 
       <div className="lg:hidden mt-4">
-        <Button
-          endContent={<ArrowIcon />}
-          className="bg-primary font-semibold text-white py-[10px] px-[24px] rounded-full flex cursor-pointer"
-        >
+        <button className="bg-primary font-semibold text-white py-[10px] px-[24px] rounded-full flex items-center gap-2 cursor-pointer">
           Contact Us
-        </Button>
+        </button>
       </div>
     </div>
   );

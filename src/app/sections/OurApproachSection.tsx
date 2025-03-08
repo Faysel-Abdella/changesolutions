@@ -33,7 +33,7 @@ const OurApproach = () => {
         transition={{ duration: 0.8, ease: "easeOut" }} // Animation timing
       >
         <p
-          className={` ${clashMedium.className} font-medium text-[52px] md:text-[96px] lg:text-[138px] bg-gradient-to-b from-[#2222221a] to-[#2222220] bg-clip-text text-transparent`}
+          className={` ${clashMedium.className} main-title font-medium text-[52px] md:text-[96px] lg:text-[138px]  `}
         >
           Approach
         </p>
