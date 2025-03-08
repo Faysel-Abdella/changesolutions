@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Favicon from "/logo.svg";
-
 export const metadata: Metadata = {
   title:
     "Change Hub Solutions — Business Transformation & Digital Innovation in Ethiopia",
@@ -54,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Change Hub Solutions",
     images: [
       {
-        url: Favicon.src,
+        url: "/logo.svg",
         width: 800,
         height: 630,
         alt: "ChangeHubSolution Logo",
