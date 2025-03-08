@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const ContactDetails = () => {
   return (
-    <div className="flex flex-col items-center justify-center max-w-[1100px] text-grey mx-auto gap-6">
+    <div className="flex flex-col z-50 items-center justify-center max-w-[1100px] text-grey mx-auto gap-6">
       <motion.div
         className="flex flex-col items-center justify-center w-full"
         initial={{ opacity: 0, y: 50 }}
@@ -22,7 +22,7 @@ const ContactDetails = () => {
         transition={{ duration: 1 }}
       >
         <p
-          className={`${clashSemibold.className} opacity-50 text-[56px] md:text-[112px] lg:text-[175px] w-full text-center bg-gradient-to-b from-[#FFFFFF] to-[#FFFFFF00] bg-clip-text text-transparent`}
+          className={`${clashSemibold.className} custom-text opacity-50 text-[56px] md:text-[112px] lg:text-[175px] w-full text-center `}
         >
           Change Hub
         </p>
@@ -67,23 +67,23 @@ const ContactDetails = () => {
           transition={{ duration: 1 }}
         >
           <p
-            className={`${gilroyBold.className} text-[28px] sm:text-left text-center`}
+            className={`${gilroyBold.className} custom-text text-[28px] sm:text-left text-center`}
           >
-            Change Hub
+            <Link href="#hero">Change Hub</Link>
           </p>
           <ul
-            className={`${gilroyMedium.className} flex flex-col  gap-[10px] justify-start font-normal text-[16px] sm:text-left text-center`}
+            className={`${gilroyMedium.className} z-50 flex flex-col  gap-[10px] justify-start font-normal text-[16px] sm:text-left text-center`}
           >
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:text-sky-blue">
               <Link href="#services">Services</Link>
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:text-sky-blue">
               <Link href="#our-approach">Our Approach</Link>
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:text-sky-blue">
               <Link href="#about-us">About Us</Link>
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:text-sky-blue">
               <Link href="#contact-us">Contact Us</Link>
             </li>
           </ul>
@@ -123,7 +123,7 @@ const ContactDetails = () => {
           transition={{ duration: 1 }}
         >
           <p
-            className={`${gilroyBold.className} text-[28px] sm:text-left text-center`}
+            className={`${gilroyBold.className} custom-text text-[28px] sm:text-left text-center`}
           >
             Contact Info
           </p>
