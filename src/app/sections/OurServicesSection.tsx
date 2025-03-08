@@ -125,9 +125,9 @@ const OurServices = () => {
                   }
                 }
                 transition={{
-                  duration: 0.2,
-                  // ease: "easeInOut",
-                  // type: "tween",
+                  duration: 0.6, // Smoothens transition
+                  ease: "easeInOut", // Natural movement
+                  type: "inertia",
                 }}
               >
                 <Service {...service} />

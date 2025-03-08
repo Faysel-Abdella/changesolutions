@@ -47,26 +47,17 @@ const Service: React.FC<ServicesProps> = ({
       </div>
       <div className="flex md:flex-row flex-col gap-3 items-center justify-center md:justify-between">
         {/* Image container with full height */}
-        <div className="hidden md:block w-[395px] h-full rounded-full">
+        <div className="sm:w-[345px] sm:h-[240px] w-[300px] h-[200px] md:w-[395px] md:h-full rounded-full">
           <Image
             loading="eager"
             src={imageURL}
             alt="a woman rating 5 stars on a customer service machine"
             width={261}
             height={490}
-            className="rounded-3xl w-full h-full object-cover"
+            className="rounded-3xl w-full h-full object-cover object-center"
           />
         </div>
-        <div className="sm:w-[345px] sm:h-[240px] w-[300px] h-[200px] md:hidden flex rounded-full">
-          <Image
-            loading="eager"
-            src={`/images/discuss2.webp`}
-            alt="a woman rating 5 stars on a customer service machine"
-            width={395}
-            height={240}
-            className="rounded-3xl w-full h-full object-cover"
-          />
-        </div>
+
         {/* Text container, centered and height-restricted */}
         <div className="flex flex-col justify-center px-[32px] md:h-full">
           <div className="flex flex-col items-center md:items-start justify-center w-full md:max-h-full">
