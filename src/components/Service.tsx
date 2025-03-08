@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { TitleDescription } from "./type";
 import { gilroyMedium, gilroySemiBold } from "@/app/fonts";
-import { Button } from "@heroui/button";
 import { ArrowIcon } from "./Icons";
 import Link from "next/link";
 

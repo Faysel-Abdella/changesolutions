@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button } from "@heroui/button";
 import { gilroyBold, gilroyMedium, gilroySemiBold } from "@/app/fonts";
 import { ArrowIcon, HamburgerIcon } from "./Icons";
 import { manrope } from "@/app/fonts";
