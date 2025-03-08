@@ -169,7 +169,7 @@ const ContactDetails = () => {
                   <p
                     className={` ${gilroyMedium.className} text-[16px] font-normal text-left w-full`}
                   >
-                    +251 923 637 271
+                    +251 93 683 4853
                   </p>
                   <p
                     className={`${gilroyRegularItalic.className} text-left w-full`}
@@ -194,7 +194,7 @@ const ContactDetails = () => {
                   <p
                     className={` ${gilroyMedium.className} text-[16px] font-normal text-left w-full`}
                   >
-                    contact@Example.com
+                    info@changehubsolutions.com
                   </p>
                   <p
                     className={` ${gilroyRegularItalic.className} text-left w-full`}
@@ -230,7 +230,7 @@ const ContactDetails = () => {
         <p
           className={` ${gilroyMedium.className} text-[14px] text-center text-grey opacity-90`}
         >
-          &copy; AutoHelp USA, all rights reserved 2025
+          &copy; ChangeHub-Solutions, all rights reserved 2025
         </p>
       </div>
     </div>
