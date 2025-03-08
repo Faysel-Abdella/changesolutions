@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-// import Favicon from "./favicon.";
+import Favicon from "/logo.svg";
 
 export const metadata: Metadata = {
   title:
@@ -52,17 +52,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.changehubsolutions.com",
     siteName: "Change Hub Solutions",
-    // images: [
-    //   {
-    //     // url: Favicon.src,
-    //     width: 800,
-    //     height: 630,
-    //     alt: "ChangeHubSolution Logo",
-    //   },
-    // ],
+    images: [
+      {
+        url: Favicon.src,
+        width: 800,
+        height: 630,
+        alt: "ChangeHubSolution Logo",
+      },
+    ],
   },
   alternates: {
     canonical: "https://www.changehubsolutions.com",
+  },
+
+  icons: {
+    icon: "/logo.svg",
   },
 };
 
