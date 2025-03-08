@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@theme {
+  --color-primary: #222222;
+  --color-charcoal: #363d48;
+  --color-charcoal-bg: #363d48;
+  --color-sky-blue: #5b76e2;
+
+  --color-light-blue: #708dff;
+  --color-white-text: linear-gradient(
+    93.02deg,
+    #eaeaea 35.9%,
+    #ebebeb 35.9%,
+    #b5b9be 57.14%,
+    #727a84 78.23%
+  );
+  --color-borders: #cecece;
+  --color-line: #d6d6d6;
+  --color-dots: #d4d4d7;
+  --color-gray-box: #f6f6f6;
+  --color-gray-text: #888888;
+
+  --color-border2: #c5c5c540;
+  --shadow-custom: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)";
+  --color-dark-blue: #14132d;
+  --color-gray-block: #22222240;
+  --color-gray-text: #8994a3;
+  --color-blue-black: #090a0ecc;
+  --color-grey: #888888;
+  --color-light-blue-black: #48456b;
+
+  --color-white-fade: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0) 85.74%
+  );
+
+  --color-white-dim: linear-gradient(
+    93.02deg,
+    #eaeaea 35.9%,
+    #ebebeb 35.9%,
+    #b5b9be 57.14%,
+    #727a84 78.23%
+  );
+  --color-headings: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 0.1) 0%,
+    rgba(34, 34, 34, 0) 85.74%
+  );
+  --color-bg-color: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --color-blurred: blur(63.48090744018555px);
+  --color-contact-bg: linear-gradient(
+    89.86deg,
+    #1b2431 2.23%,
+    rgba(27, 36, 49, 0) 13.36%
+  );
+  --color-mixed-blue: linear-gradient(
+    93.02deg,
+    #708dff 35.9%,
+    #5b76e2 35.9%,
+    #396499 57.14%
+  );
+
+  --color-overlay: linear-gradient(
+    0deg,
+    #fff 0%,
+    rgba(255, 255, 255, 0) 9.17%,
+    rgba(255, 255, 255, 0) 91%,
+    #fff 100%
+  );
+
+  --color-white-border: linear-gradient(
+    137.57deg,
+    rgba(255, 255, 255, 0.75) 1.99%,
+    rgba(255, 255, 255, 0) 51.67%
+  );
+  --color-blue-box :{ linear-gradient(
+      309.38deg,
+      rgba(50, 45, 90, 0.5) 2.92%,
+      rgba(50, 45, 90, 0.375) 96.52%
+    );
+  }
+  --breakpoint-mid: "744px";
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+}
+.custom-dotted-circle {
+  border-width: 2px;
+  border-style: dashed;
+  border-color: #22222240;
+  border-radius: 50%;
+  border-spacing: 10px;
+  background: #f6f6f666;
+}
+
+.custom-dotted-circle-small {
+  border-width: 2px;
+  border-style: dashed;
+  border-color: #22222226;
+  border-radius: 50%;
+  border-spacing: 10px;
+  background: #f6f6f699;
+}
+
+.bg-custom-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.0375) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.0375) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .image-bg {
+    background-size: 100% 60% !important; /* 60% of height for smaller screens */
+    background-position: bottom center !important;
+  }
+}
