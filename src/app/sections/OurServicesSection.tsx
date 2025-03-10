@@ -1,47 +1,54 @@
 "use client";
+
 import Service from "@/components/Service";
-import React, { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { clashMedium, gilroyBold, gilroyRegular, manrope } from "../fonts";
 import { SlideRightIcon, SlideLeftIcon } from "@/components/Icons";
 import { serviceList } from "@/data/constants";
-import { motion, useMotionValue } from "framer-motion";
-
-const DRAG_BUFFER = 15;
+import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 
 const OurServices = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    dragFree: false,
+  });
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [dragging, setDraggging] = useState(false);
-  const totalServices = serviceList.length;
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
 
-  const dragX = useMotionValue(0);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const goNext = () => {
-    if (currentIndex < totalServices - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
-  const goPrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
+  const scrollTo = useCallback(
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
 
-  const onDragStart = () => {
-    setDraggging(!dragging);
-  };
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCurrentIndex(emblaApi.selectedScrollSnap());
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
 
-  const onDragEnd = () => {
-    setDraggging(!dragging);
-    const x = dragX.get();
-    console.log(x);
+  useEffect(() => {
+    if (!emblaApi) return;
 
-    if (x <= -DRAG_BUFFER && currentIndex < totalServices - 1) {
-      setCurrentIndex((prev) => prev + 1);
-    } else if (x >= -DRAG_BUFFER && currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
-    }
-  };
+    onSelect();
+    emblaApi.on("select", onSelect);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   return (
     <motion.div
@@ -80,66 +87,38 @@ const OurServices = () => {
       </div>
 
       {/* Services Section with Pagination */}
-      <div className="relative flex items-center justify-center w-full max-w-[1221px] px-[32px] ">
+      <div className="relative flex items-center justify-center w-full max-w-[1221px] px-[32px]">
         {/* Left Arrow - Hidden on First Slide */}
-        {currentIndex > 0 && (
+        {canScrollPrev && (
           <button
-            onClick={goPrev}
-            className="absolute left-3 z-10  md:flex items-center justify-center transition cursor-pointer"
+            onClick={scrollPrev}
+            className="absolute left-3 z-10 md:flex items-center justify-center transition cursor-pointer"
           >
             <SlideLeftIcon />
           </button>
         )}
 
-        {/* Sliding Services Container */}
-        <div className="overflow-hidden min-w-[350px] w-full max-w-[1005px]">
-          <motion.div
-            className="flex transition-transform duration-75 ease-in-out"
-            drag="x"
-            dragConstraints={{
-              left: 0,
-              right: 0,
-            }}
-            style={{
-              x: dragX,
-            }}
-            transition={
-              {
-                // duration: 0.2,
-                // ease: "easeInOut"
-              }
-            }
-            onDragStart={onDragStart}
-            onDragEnd={onDragEnd}
-            animate={{
-              translateX: `-${currentIndex * 100}%`,
-            }}
-          >
+        {/* Embla Carousel Container */}
+        <div
+          className="overflow-hidden min-w-[350px] w-full max-w-[1005px]"
+          ref={emblaRef}
+        >
+          <div className="flex">
             {serviceList.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="w-full flex-shrink-0 cursor-grab "
-                animate={
-                  {
-                    // scale: currentIndex === index ? 0.95 : 0.8,
-                  }
-                }
-                transition={{
-                  duration: 0.6, // Smoothens transition
-                  ease: "easeInOut", // Natural movement
-                  type: "inertia",
-                }}
+                className="w-full flex-shrink-0 flex-grow-0 flex-[0_0_100%]"
               >
                 <Service {...service} />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Arrow - Hidden on Last Slide */}
-        {currentIndex < totalServices - 1 && (
+        {canScrollNext && (
           <button
-            onClick={goNext}
+            onClick={scrollNext}
             className="absolute right-3 z-10 md:flex items-center justify-center transition cursor-pointer"
           >
             <SlideRightIcon />
@@ -148,15 +127,15 @@ const OurServices = () => {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex items-center cursor-pointer justify-center gap-[6px] mb-4 ">
+      <div className="flex items-center cursor-pointer justify-center gap-[6px] mb-4">
         {serviceList.map((_, index) => (
           <span
             key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-[7px] h-[7px] rounded-full cursor-pointer ${
+            onClick={() => scrollTo(index)}
+            className={`h-[7px] rounded-full cursor-pointer transition-all duration-300 ${
               index === currentIndex
-                ? "bg-sky-blue w-[21px] h-[7px]"
-                : "bg-dots"
+                ? "bg-sky-blue w-[21px]"
+                : "bg-dots w-[7px]"
             }`}
           />
         ))}
