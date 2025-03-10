@@ -63,7 +63,7 @@ const TopNavBar = () => {
       initial={{ y: -100 }} // Starts above the viewport
       animate={{ y: 0 }} // Animates to the final position
       transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
-      className="w-full z-20 py-3 md:py-[20px] px-6 lg:px-32 flex items-center justify-between border-borders border-[0.3px] rounded-full bg-white md:border-0 md:bg-transparent"
+      className="w-full z-20 py-0  md:py-[20px] px-6 lg:px-32 flex items-center justify-between border-borders border-[0.3px] rounded-full bg-white md:border-0 md:bg-transparent"
     >
       <div className={`${gilroyBold.className} max-md:scale-70 scale-90`}>
         <div>
