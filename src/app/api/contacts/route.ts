@@ -51,7 +51,6 @@ export async function POST(request: NextRequest) {
           <p>${message || "N/A"}</p>
         </div>
 
-        <p style="text-align: center; font-size: 14px; color: #888; margin-top: 20px;">This email was automatically generated. Please do not reply.</p>
       </div>
     </div>
   `.trim(),
