@@ -38,8 +38,6 @@ export default function ContactForm() {
     setLoading(true);
     setResponseMessage("");
 
-    console.log("This is form data", formData);
-
     try {
       const res = await fetch("/api/contacts", {
         method: "POST",
